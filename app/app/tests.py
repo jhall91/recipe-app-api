@@ -20,3 +20,9 @@ class CalcTests(SimpleTestCase):
         res = calc.subtract(10, 15)
 
         self.assertEqual(res, 5)
+
+    def test_multiply(self):
+        """Test multiplying numbers"""
+        res = calc.multiply(2, 5)
+
+        self.assertEqual(res, 10)
