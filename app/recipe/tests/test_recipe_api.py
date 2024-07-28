@@ -19,7 +19,7 @@ RECIPES_URL = reverse('recipe:recipe-list')
 
 
 def create_recipe(user, **params):
-    """Create and retrun a sample recipe."""
+    """Create and return a sample recipe."""
     defaults = {
         'title': 'Sample recipe title',
         'time_minutes': 22,
@@ -44,7 +44,6 @@ class PublicRecipeAPITests(TestCase):
         res = self.client.get(RECIPES_URL)
 
         self.assertEqual(res.status_code, status.HTTP_401_UNAUTHORIZED)
-
 
 
 class PrivateRecipeApiTests(TestCase):
@@ -72,7 +71,7 @@ class PrivateRecipeApiTests(TestCase):
 
     def test_recipe_list_limited_to_user(self):
         """Test list of recipes is limited to authenticated user."""
-        other_user = get_user_model().objects.create.user(
+        other_user = get_user_model().objects.create_user(
             'other@example.com',
             'password123',
         )
