@@ -7,6 +7,9 @@ docker-compose run --rm app sh -c "python manage.py makemigrations"
 To create a new app:
 docker-compose run --rm app sh -c "python manage.py startapp user"
 
+To build the docker image:
+docker-compose build
+
 Django superuser password & email:
 djan6oPa$$word
 admin@example.com
