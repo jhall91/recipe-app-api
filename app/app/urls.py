@@ -34,6 +34,7 @@ urlpatterns = [
     ),
     path('api/user/', include('user.urls')),
     path('api/recipe/', include('recipe.urls')),
+    path('spec_review/', include('spec_review.urls'))
 ]
 
 if settings.DEBUG:
