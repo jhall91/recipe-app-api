@@ -14,9 +14,9 @@ import hashlib
 from django.core.exceptions import ValidationError
 
 class Specification(models.Model):
-    spec_number = models.CharField(max_length=100)
+    spec_number = models.CharField(max_length=50)
     spec_title = models.CharField(max_length=255)
-    spec_authority = models.CharField(max_length=100)
+    spec_authority = models.CharField(max_length=50)
     revision = models.CharField(max_length=50)
     pdf = models.FileField(upload_to='specifications_pdfs/', blank=True, null=True)
 
