@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Component Requirements</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <h1>Requirements for {{ component.name }}</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Requirement</th>
+                <th>Specification Number</th>
+                <th>Title</th>
+                <th>Clause</th>
+                <th>Page</th>
+                <th>Deviation</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for requirement in requirements %}
+            <tr>
+                <td>{{ requirement.requirement }}</td>
+                <td>{{ requirement.specification.spec_number }}</td>
+                <td>{{ requirement.specification.spec_title }}</td>
+                <td>{{ requirement.clause }}</td>
+                <td>{{ requirement.page_number }}</td>
+                <td>{{ requirement.deviation }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

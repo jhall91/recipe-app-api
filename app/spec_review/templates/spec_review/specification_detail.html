@@ -1,0 +1,19 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ specification.spec_number }} - {{ specification.spec_title }}</title>
+</head>
+<body>
+    <h1>{{ specification.spec_number }} - {{ specification.spec_title }}</h1>
+    <p><strong>Authority:</strong> {{ specification.spec_authority }}</p>
+    <p><strong>Revision:</strong> {{ specification.revision }}</p>
+
+    {% if specification.pdf %}
+        <h2>Specification Document</h2>
+        <embed src="{{ specification.pdf.url }}" type="application/pdf" width="100%" height="600px" />
+    {% else %}
+        <p>No PDF uploaded.</p>
+    {% endif %}
+</body>
+</html>

@@ -1,0 +1,19 @@
+To run the test in terminal:
+docker-compose run --rm app sh -c "python manage.py test"
+
+To make migrations in terminal:
+docker-compose run --rm app sh -c "python manage.py makemigrations"
+
+docker-compose run --rm app sh -c "python manage.py migrate"
+
+docker-compose run --rm app sh -c "python manage.py runserver"
+
+To create a new app:
+docker-compose run --rm app sh -c "python manage.py startapp app_name"
+
+To build the docker image:
+docker-compose build
+
+Django superuser password & email:
+djan6oPa$$word
+admin@example.com
